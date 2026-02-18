@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PracticeGrid Solutions | End-to-End Medical Billing</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --primary:#0A4D68;
+    --secondary:#05BFDB;
+    --accent:#088395;
+    --light:#f4f9fb;
+    --dark:#0f172a;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:#fff;
+    color:#333;
+    scroll-behavior:smooth;
+}
+
+header{
+    background:var(--primary);
+    color:#fff;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+header img{
+    height:60px;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    margin-left:25px;
+    font-weight:500;
+}
+
+nav a:hover{
+    color:var(--secondary);
+}
+
+.hero{
+    background:linear-gradient(135deg,var(--primary),var(--accent));
+    color:#fff;
+    padding:100px 8%;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:48px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:18px;
+    max-width:800px;
+    margin:auto;
+}
+
+.btn{
+    margin-top:30px;
+    display:inline-block;
+    padding:12px 30px;
+    background:var(--secondary);
+    color:#fff;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#fff;
+    color:var(--primary);
+}
+
+section{
+    padding:80px 8%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+    color:var(--primary);
+    font-size:36px;
+}
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.service-card{
+    background:var(--light);
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+    transition:0.4s;
+}
+
+.service-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+.service-card h3{
+    color:var(--primary);
+    margin-bottom:15px;
+}
+
+.why-us{
+    background:var(--light);
+}
+
+.why-points{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.point{
+    background:#fff;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+.point h4{
+    color:var(--accent);
+    margin-bottom:10px;
+}
+
+.ehr-section{
+    background:var(--primary);
+    color:#fff;
+    overflow:hidden;
+}
+
+.slider{
+    display:flex;
+    width:calc(250px * 24);
+    animation:scroll 20s linear infinite;
+}
+
+.slide{
+    width:250px;
+    text-align:center;
+    padding:20px;
+    font-weight:600;
+    font-size:18px;
+}
+
+@keyframes scroll{
+    0%{transform:translateX(0);}
+    100%{transform:translateX(-50%);}
+}
+
+.contact{
+    text-align:center;
+}
+
+footer{
+    background:var(--dark);
+    color:#fff;
+    text-align:center;
+    padding:30px;
+}
+
+.social a{
+    color:#fff;
+    margin:0 10px;
+    font-size:20px;
+    text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <img src="logo.png" alt="PracticeGrid Solutions Logo">
+    <nav>
+        <a href="#services">Services</a>
+        <a href="#whyus">Why Us</a>
+        <a href="#ehr">EHR Expertise</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>End-to-End Revenue Cycle Management</h1>
+    <p>PracticeGrid Solutions delivers complete medical billing, revenue optimization, and practice management solutions designed to maximize reimbursements and reduce operational burden.</p>
+    <a href="#contact" class="btn">Get Started Today</a>
+</section>
+
+<section id="services">
+    <h2 class="section-title">Our Services</h2>
+    <div class="services">
+
+        <div class="service-card">
+            <h3>Patient Scheduling</h3>
+            <p>Streamlined scheduling systems to reduce no-shows, optimize provider calendars, and enhance patient flow efficiency.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Benefits & Eligibility</h3>
+            <p>Accurate insurance verification ensuring correct co-pays, deductibles, and coverage validation before services are rendered.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Authorization</h3>
+            <p>Prior authorization management ensuring compliance with payer requirements to avoid claim denials.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Medical Billing</h3>
+            <p>Accurate claim submission with CPT, ICD-10, and HCPCS coding ensuring clean claims and faster reimbursements.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Accounts Receivable (AR)</h3>
+            <p>Persistent follow-up on unpaid claims to minimize aging and accelerate revenue recovery.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Denial Management</h3>
+            <p>Root cause analysis and appeals processing to recover denied claims and reduce recurring errors.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Payment Posting</h3>
+            <p>Accurate ERA/EOB posting with reconciliation ensuring transparency and accurate financial records.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Practice Analytics</h3>
+            <p>Detailed financial reporting and KPI dashboards for data-driven revenue growth decisions.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>EDI / ERA / EFT Enrollments & Credentialing</h3>
+            <p>Complete payer enrollments and credentialing services to ensure smooth electronic claim transactions.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Medical Scribing</h3>
+            <p>Professional documentation support enabling providers to focus more on patient care.</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="whyus" class="why-us">
+    <h2 class="section-title">Why Choose PracticeGrid Solutions?</h2>
+    <div class="why-points">
+
+        <div class="point">
+            <h4>Customized Solutions</h4>
+            <p>Tailored revenue cycle strategies aligned with your specialty and operational goals.</p>
+        </div>
+
+        <div class="point">
+            <h4>End-to-End RCM</h4>
+            <p>Complete revenue cycle management under one roof, reducing vendor dependency.</p>
+        </div>
+
+        <div class="point">
+            <h4>Efficient Reporting</h4>
+            <p>Advanced reporting systems delivering accurate revenue tracking and insights.</p>
+        </div>
+
+        <div class="point">
+            <h4>Dedicated Claim Advocacy</h4>
+            <p>Every claim is tracked, analyzed, and pursued aggressively for maximum reimbursement.</p>
+        </div>
+
+        <div class="point">
+            <h4>No Set-Up Fees</h4>
+            <p>Start immediately without financial barriers or hidden onboarding charges.</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="ehr" class="ehr-section">
+    <h2 class="section-title" style="color:#fff;">EHR & Clearinghouse Expertise</h2>
+    <div class="slider">
+        <div class="slide">eClinicalWorks</div>
+        <div class="slide">ModMed</div>
+        <div class="slide">AdvancedMD</div>
+        <div class="slide">EPIC</div>
+        <div class="slide">TherapyNotes</div>
+        <div class="slide">SimplePractice</div>
+        <div class="slide">Tebra</div>
+        <div class="slide">Availity</div>
+        <div class="slide">Trizetto</div>
+        <div class="slide">Waystar</div>
+        <div class="slide">GatewayEDI</div>
+        <div class="slide">ClaimRemedi</div>
+
+        <!-- Duplicate for seamless animation -->
+        <div class="slide">eClinicalWorks</div>
+        <div class="slide">ModMed</div>
+        <div class="slide">AdvancedMD</div>
+        <div class="slide">EPIC</div>
+        <div class="slide">TherapyNotes</div>
+        <div class="slide">SimplePractice</div>
+        <div class="slide">Tebra</div>
+        <div class="slide">Availity</div>
+        <div class="slide">Trizetto</div>
+        <div class="slide">Waystar</div>
+        <div class="slide">GatewayEDI</div>
+        <div class="slide">ClaimRemedi</div>
+    </div>
+</section>
+
+<section id="contact" class="contact">
+    <h2 class="section-title">Contact Us</h2>
+    <p>Email: <a href="mailto:contact@practicegridsolutions.com">contact@practicegridsolutions.com</a></p>
+    <p>Phone: +1 (727) 674-1458</p>
+</section>
+
+<footer>
+    <p>© 2026 PracticeGrid Solutions. All Rights Reserved.</p>
+    <div class="social">
+        <a href="#">LinkedIn</a>
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">Twitter</a>
+    </div>
+</footer>
+
+</body>
+</html>
