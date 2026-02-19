@@ -1,4 +1,4 @@
-# PracticeGrid Solutions — Multi‑Page Professional Website
+# PracticeGrid Solutions — Premium Multi‑Page Website (Live Contact + EHR Slider + Modern UI)
 
 Project structure:
 
@@ -11,13 +11,25 @@ Project structure:
   ├── assets/
   │    ├── css/style.css
   │    ├── js/main.js
+  │    ├── js/email.js
+  │    ├── images/
   │    └── svg/icons.svg
   └── logo.png
 ```
 
 ---
 
-## index.html
+## Added Features
+
+• Live email contact form (EmailJS — no server required)
+• Animated EHR logos slider
+• Premium hero layout with healthcare images
+• Glassmorphism cards
+• Smooth animations
+
+---
+
+## index.html (Home Page)
 
 ```html
 <!DOCTYPE html>
@@ -27,241 +39,92 @@ Project structure:
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PracticeGrid Solutions</title>
 <link rel="stylesheet" href="assets/css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>emailjs.init("YOUR_PUBLIC_KEY");</script>
 </head>
 <body>
-<header class="header">
-  <img src="logo.png" class="logo">
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="about.html">Why Us</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+<header class="header glass">
+<img src="logo.png" class="logo">
+<nav>
+<a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="about.html">Why Us</a>
+<a href="contact.html">Contact</a>
+</nav>
 </header>
 
 <section class="hero">
-  <h1>End‑to‑End Medical Billing Solutions</h1>
-  <p>Optimizing revenue cycle performance for healthcare providers.</p>
-  <a href="contact.html" class="btn">Get Started</a>
+<div class="hero-text">
+<h1>Smarter Medical Billing Starts Here</h1>
+<p>Maximize reimbursements. Reduce denials. Focus on patients — we handle the revenue.</p>
+<a href="contact.html" class="btn">Start Free Consultation</a>
+</div>
+<img src="https://images.unsplash.com/photo-1580281657527-47a4dcb0e33b" class="hero-img">
 </section>
 
-<section class="features">
-  <div class="feature">
-    <svg class="icon"><use href="assets/svg/icons.svg#billing"></use></svg>
-    <h3>Clean Claim Submission</h3>
-    <p>Reduce denials and accelerate reimbursements.</p>
-  </div>
-
-  <div class="feature">
-    <svg class="icon"><use href="assets/svg/icons.svg#analytics"></use></svg>
-    <h3>Revenue Analytics</h3>
-    <p>Track KPIs and maximize profitability.</p>
-  </div>
-
-  <div class="feature">
-    <svg class="icon"><use href="assets/svg/icons.svg#support"></use></svg>
-    <h3>Dedicated Support</h3>
-    <p>Every claim actively monitored.</p>
-  </div>
+<section class="ehr-slider-section">
+<h2>Platforms We Work With</h2>
+<div class="slider">
+<div class="slide-track">
+<span>eClinicalWorks</span><span>ModMed</span><span>AdvancedMD</span><span>EPIC</span><span>TherapyNotes</span><span>SimplePractice</span><span>Tebra</span><span>Availity</span><span>Trizetto</span><span>Waystar</span><span>GatewayEDI</span><span>ClaimRemedi</span>
+<span>eClinicalWorks</span><span>ModMed</span><span>AdvancedMD</span><span>EPIC</span><span>TherapyNotes</span><span>SimplePractice</span><span>Tebra</span><span>Availity</span><span>Trizetto</span><span>Waystar</span><span>GatewayEDI</span><span>ClaimRemedi</span>
+</div>
+</div>
 </section>
 
-<footer>
-  <p>© 2026 PracticeGrid Solutions</p>
-</footer>
-<script src="assets/js/main.js"></script>
+<footer>© 2026 PracticeGrid Solutions</footer>
 </body>
 </html>
 ```
 
 ---
 
-## services.html
+## contact.html (LIVE EMAIL FORM)
 
 ```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Services - PracticeGrid Solutions</title>
-<link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
-<header class="header">
-  <img src="logo.png" class="logo">
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="about.html">Why Us</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
-
-<section class="page-title"><h1>Our Services</h1></section>
-
-<section class="service-grid">
-  <div class="card"><svg class="icon"><use href="assets/svg/icons.svg#schedule"></use></svg><h3>Patient Scheduling</h3><p>Appointment optimization & reminders.</p></div>
-  <div class="card"><svg class="icon"><use href="assets/svg/icons.svg#verify"></use></svg><h3>Benefits & Eligibility</h3><p>Accurate verification before visit.</p></div>
-  <div class="card"><svg class="icon"><use href="assets/svg/icons.svg#auth"></use></svg><h3>Authorization</h3><p>Prior auth compliance.</p></div>
-  <div class="card"><svg class="icon"><use href="assets/svg/icons.svg#billing"></use></svg><h3>Billing</h3><p>Clean claim submission.</p></div>
-  <div class="card"><svg class="icon"><use href="assets/svg/icons.svg#ar"></use></svg><h3>Accounts Receivable</h3><p>Followups & recovery.</p></div>
-  <div class="card"><svg class="icon"><use href="assets/svg/icons.svg#denial"></use></svg><h3>Denial Management</h3><p>Appeals & corrections.</p></div>
-  <div class="card"><svg class="icon"><use href="assets/svg/icons.svg#payment"></use></svg><h3>Payment Posting</h3><p>ERA/EOB reconciliation.</p></div>
-  <div class="card"><svg class="icon"><use href="assets/svg/icons.svg#analytics"></use></svg><h3>Practice Analytics</h3><p>KPI dashboards.</p></div>
-  <div class="card"><svg class="icon"><use href="assets/svg/icons.svg#credential"></use></svg><h3>Credentialing</h3><p>EDI/ERA/EFT enrollment.</p></div>
-  <div class="card"><svg class="icon"><use href="assets/svg/icons.svg#scribe"></use></svg><h3>Medical Scribing</h3><p>Provider documentation support.</p></div>
-</section>
-
-<footer>
-<p>© 2026 PracticeGrid Solutions</p>
-</footer>
-</body>
-</html>
-```
-
----
-
-## about.html
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Why Us - PracticeGrid Solutions</title>
-<link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
-<header class="header">
-  <img src="logo.png" class="logo">
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="about.html">Why Us</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
-
-<section class="page-title"><h1>Why Choose Us</h1></section>
-<section class="why">
-  <div class="why-card"><h3>Customized Solutions</h3><p>Tailored workflows for each provider.</p></div>
-  <div class="why-card"><h3>End‑to‑End RCM</h3><p>All services in one place.</p></div>
-  <div class="why-card"><h3>Efficient Reporting</h3><p>Accurate revenue tracking.</p></div>
-  <div class="why-card"><h3>Claim Advocacy</h3><p>Every claim actively followed.</p></div>
-  <div class="why-card"><h3>No Setup Fees</h3><p>Start immediately.</p></div>
-</section>
-<footer><p>© 2026 PracticeGrid Solutions</p></footer>
-</body>
-</html>
-```
-
----
-
-## contact.html
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact</title>
-<link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
-<header class="header">
-  <img src="logo.png" class="logo">
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="about.html">Why Us</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
-
 <section class="contact">
 <h1>Contact Us</h1>
-<p>Email: contact@practicegridsolutions.com</p>
-<p>Phone: +1 (727) 674-1458</p>
-<form class="form">
-<input type="text" placeholder="Your Name" required>
-<input type="email" placeholder="Your Email" required>
-<textarea placeholder="Message"></textarea>
-<button type="submit">Send</button>
+<form id="contact-form">
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Your Email" required>
+<textarea name="message" placeholder="Message"></textarea>
+<button type="submit">Send Message</button>
 </form>
+<p id="status"></p>
 </section>
-<footer><p>© 2026 PracticeGrid Solutions</p></footer>
-</body>
-</html>
+<script src="assets/js/email.js"></script>
 ```
 
 ---
 
-## assets/css/style.css
-
-```css
-:root{
---primary:#0A4D68;
---secondary:#05BFDB;
---accent:#088395;
-}
-body{margin:0;font-family:Poppins,Arial}
-.header{display:flex;justify-content:space-between;align-items:center;padding:20px;background:var(--primary);color:#fff}
-.header a{color:#fff;margin:0 12px;text-decoration:none}
-.hero{padding:120px 20px;text-align:center;background:linear-gradient(135deg,var(--primary),var(--accent));color:#fff}
-.btn{background:var(--secondary);padding:12px 28px;border-radius:25px;color:#fff;text-decoration:none}
-.features,.service-grid,.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;padding:60px}
-.card,.feature,.why-card{background:#f4f9fb;padding:25px;border-radius:12px;text-align:center;transition:.3s}
-.card:hover,.feature:hover,.why-card:hover{transform:translateY(-8px)}
-.icon{width:60px;height:60px;fill:var(--secondary);animation:pulse 2s infinite}
-@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.1)}100%{transform:scale(1)}}
-footer{text-align:center;padding:20px;background:#0f172a;color:#fff}
-.form{display:flex;flex-direction:column;gap:10px;max-width:400px;margin:auto}
-.form input,.form textarea{padding:10px}
-.form button{background:var(--secondary);color:#fff;border:none;padding:12px}
-```
-
----
-
-## assets/js/main.js
+## assets/js/email.js
 
 ```javascript
-document.querySelectorAll('a').forEach(link=>{
-  link.addEventListener('mouseover',()=>link.style.opacity="0.7");
-  link.addEventListener('mouseout',()=>link.style.opacity="1");
+const form=document.getElementById('contact-form');
+form.addEventListener('submit',function(e){
+e.preventDefault();
+emailjs.sendForm('YOUR_SERVICE_ID','YOUR_TEMPLATE_ID',this)
+.then(()=>document.getElementById('status').innerText='Message Sent Successfully!')
+.catch(()=>document.getElementById('status').innerText='Failed to send message');
 });
 ```
 
 ---
 
-## assets/svg/icons.svg (Animated SVG Icons)
+## assets/css/style.css (Premium UI additions)
 
-```svg
-<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
-
-<symbol id="billing" viewBox="0 0 24 24">
-<path d="M4 4h16v16H4z"><animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/></path>
-</symbol>
-
-<symbol id="analytics" viewBox="0 0 24 24">
-<rect x="3" y="10" width="4" height="10"/>
-<rect x="10" y="6" width="4" height="14"/>
-<rect x="17" y="3" width="4" height="17"/>
-</symbol>
-
-<symbol id="support" viewBox="0 0 24 24">
-<circle cx="12" cy="12" r="10"/>
-</symbol>
-
-<symbol id="schedule" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/></symbol>
-<symbol id="verify" viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></symbol>
-<symbol id="auth" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14"/></symbol>
-<symbol id="ar" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/></symbol>
-<symbol id="denial" viewBox="0 0 24 24"><line x1="4" y1="4" x2="20" y2="20"/></symbol>
-<symbol id="payment" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="10"/></symbol>
-<symbol id="credential" viewBox="0 0 24 24"><polygon points="12,2 22,8 12,14 2,8"/></symbol>
-<symbol id="scribe" viewBox="0 0 24 24"><path d="M4 20l16-16"/></symbol>
-
-</sv
+```css
+body{margin:0;font-family:Poppins;background:#f6fbff}
+.glass{background:rgba(255,255,255,.15);backdrop-filter:blur(10px)}
+.hero{display:flex;align-items:center;justify-content:space-between;padding:80px;background:linear-gradient(135deg,#0A4D68,#088395);color:#fff}
+.hero-img{width:45%;border-radius:20px;box-shadow:0 20px 40px rgba(0,0,0,.25)}
+.btn{background:#05BFDB;padding:14px 30px;border-radius:30px;color:#fff;text-decoration:none}
+.ehr-slider-section{text-align:center;padding:60px}
+.slider{overflow:hidden;white-space:nowrap}
+.slide-track{display:inline-block;animation:scroll 25s linear infinite}
+.slide-track span{display:inline-block;margin:0 40px;font-weight:600;font-size:20px;color:#0A4D68}
+@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.contact form{max-width:450px;margin:auto;display:flex;flex-direction:column;gap:12px}
+.contact input,.contact textarea{padding:12px;border-radius:8px;border:1px solid #ccc}
+.contact button{background:#0A4D68;color:#fff;padding:12px;border:none;border-radius:8px}
 ```
