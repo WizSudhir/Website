@@ -1,118 +1,216 @@
-# PracticeGrid Solutions — Premium Multi‑Page Website (Live Contact + EHR Slider + Modern UI)
+<!--
+PracticeGrid Solutions - Multi Page Website
+Project Structure (create files accordingly):
+/
+  index.html
+  services.html
+  about.html
+  contact.html
+  css/styles.css
+  js/script.js
+  assets/logo.png   (place your provided logo here and rename to logo.png)
 
-Project structure:
+Contact form uses EmailJS (free email sending without backend)
+https://www.emailjs.com/  -> create account and replace SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY
+-->
 
-```
-/practicegrid
-  ├── index.html
-  ├── services.html
-  ├── about.html
-  ├── contact.html
-  ├── assets/
-  │    ├── css/style.css
-  │    ├── js/main.js
-  │    ├── js/email.js
-  │    ├── images/
-  │    └── svg/icons.svg
-  └── logo.png
-```
-
-## index.html (Home Page)
-
-```html
+<!-- ======================= index.html ======================= -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PracticeGrid Solutions</title>
-<link rel="stylesheet" href="assets/css/style.css">
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script>emailjs.init("YOUR_PUBLIC_KEY");</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PracticeGrid Solutions | Medical Billing Experts</title>
+<link rel="stylesheet" href="css/styles.css" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<header class="header glass">
-<img src="logo.png" class="logo">
-<nav>
-<a href="index.html">Home</a>
-<a href="services.html">Services</a>
-<a href="about.html">Why Us</a>
-<a href="contact.html">Contact</a>
-</nav>
+<header class="navbar">
+  <img src="assets/logo.png" class="logo" />
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">Why Us</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 </header>
 
 <section class="hero">
-<div class="hero-text">
-<h1>Smarter Medical Billing Starts Here</h1>
-<p>Maximize reimbursements. Reduce denials. Focus on patients — we handle the revenue.</p>
-<a href="contact.html" class="btn">Start Free Consultation</a>
-</div>
-<img src="https://images.unsplash.com/photo-1580281657527-47a4dcb0e33b" class="hero-img">
+  <div class="hero-text">
+    <h1>End‑to‑End Medical Billing & RCM Solutions</h1>
+    <p>Maximize reimbursements. Minimize denials. Focus on patient care.</p>
+    <a href="contact.html" class="btn">Get Started</a>
+  </div>
 </section>
 
-<section class="ehr-slider-section">
-<h2>Platforms We Work With</h2>
-<div class="slider">
-<div class="slide-track">
-<span>eClinicalWorks</span><span>ModMed</span><span>AdvancedMD</span><span>EPIC</span><span>TherapyNotes</span><span>SimplePractice</span><span>Tebra</span><span>Availity</span><span>Trizetto</span><span>Waystar</span><span>GatewayEDI</span><span>ClaimRemedi</span>
-<span>eClinicalWorks</span><span>ModMed</span><span>AdvancedMD</span><span>EPIC</span><span>TherapyNotes</span><span>SimplePractice</span><span>Tebra</span><span>Availity</span><span>Trizetto</span><span>Waystar</span><span>GatewayEDI</span><span>ClaimRemedi</span>
-</div>
-</div>
+<section class="ehr-slider">
+  <h2>Platforms We Work With</h2>
+  <div class="slider-track">
+    <div class="slide">eClinicalWorks</div>
+    <div class="slide">ModMed</div>
+    <div class="slide">AdvancedMD</div>
+    <div class="slide">EPIC</div>
+    <div class="slide">TherapyNotes</div>
+    <div class="slide">SimplePractice</div>
+    <div class="slide">Tebra</div>
+    <div class="slide">Availity</div>
+    <div class="slide">Trizetto</div>
+    <div class="slide">Waystar</div>
+    <div class="slide">GatewayEDI</div>
+    <div class="slide">ClaimRemedi</div>
+  </div>
 </section>
 
-<footer>© 2026 PracticeGrid Solutions</footer>
+<footer>
+  <p>© 2026 PracticeGrid Solutions</p>
+  <p>contact@practicegridsolutions.com | +1 (727) 674-1458</p>
+</footer>
 </body>
 </html>
-```
 
----
 
-## contact.html (LIVE EMAIL FORM)
+<!-- ======================= services.html ======================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Services - PracticeGrid Solutions</title>
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<header class="navbar">
+  <img src="assets/logo.png" class="logo" />
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">Why Us</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
-```html
+<section class="services">
+  <h1>Our Medical Billing Services</h1>
+  <div class="service-grid">
+    <div class="card"><h3>Patient Scheduling</h3><p>Appointment coordination, patient intake workflow optimization and eligibility checks.</p></div>
+    <div class="card"><h3>Benefits & Eligibility</h3><p>Accurate verification of coverage, deductibles, copays and policy limitations.</p></div>
+    <div class="card"><h3>Authorizations</h3><p>Prior authorization management ensuring payer compliance and faster approvals.</p></div>
+    <div class="card"><h3>Medical Billing</h3><p>Clean claim submission, CPT/ICD accuracy and payer compliant billing.</p></div>
+    <div class="card"><h3>Accounts Receivable</h3><p>Persistent follow‑ups and revenue recovery strategies to reduce aging balances.</p></div>
+    <div class="card"><h3>Denial Management</h3><p>Root cause analysis, appeal submission and reimbursement recovery.</p></div>
+    <div class="card"><h3>Payment Posting</h3><p>ERA/EOB posting with reconciliation and discrepancy detection.</p></div>
+    <div class="card"><h3>Practice Analytics</h3><p>Financial dashboards, KPI tracking and revenue trend reporting.</p></div>
+    <div class="card"><h3>EDI/ERA/EFT & Credentialing</h3><p>Payer enrollments, provider credentialing and electronic transaction setup.</p></div>
+    <div class="card"><h3>Medical Scribing</h3><p>Real‑time documentation support improving provider productivity.</p></div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 PracticeGrid Solutions</p>
+</footer>
+</body>
+</html>
+
+
+<!-- ======================= about.html ======================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Why Us - PracticeGrid Solutions</title>
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<header class="navbar">
+  <img src="assets/logo.png" class="logo" />
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">Why Us</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="whyus">
+<h1>Why Choose PracticeGrid Solutions</h1>
+<div class="why-grid">
+<div class="card"><h3>Customized Solutions</h3><p>Tailored workflows built around each provider specialty.</p></div>
+<div class="card"><h3>End‑to‑End RCM</h3><p>One partner managing full revenue cycle from scheduling to payment.</p></div>
+<div class="card"><h3>Accurate Reporting</h3><p>Advanced analytics ensuring clear financial visibility.</p></div>
+<div class="card"><h3>Claim Advocacy</h3><p>Dedicated specialists fighting every denial aggressively.</p></div>
+<div class="card"><h3>No Setup Fees</h3><p>Start without upfront costs and scale anytime.</p></div>
+</div>
+</section>
+
+<footer><p>© 2026 PracticeGrid Solutions</p></footer>
+</body>
+</html>
+
+
+<!-- ======================= contact.html ======================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact - PracticeGrid Solutions</title>
+<link rel="stylesheet" href="css/styles.css" />
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+(function(){emailjs.init("PUBLIC_KEY");})();
+function sendMail(e){
+ e.preventDefault();
+ emailjs.send("SERVICE_ID","TEMPLATE_ID",{
+  from_name:document.getElementById('name').value,
+  from_email:document.getElementById('email').value,
+  message:document.getElementById('message').value
+ }).then(()=>alert("Message Sent Successfully"));
+}
+</script>
+</head>
+<body>
+<header class="navbar">
+  <img src="assets/logo.png" class="logo" />
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">Why Us</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
 <section class="contact">
 <h1>Contact Us</h1>
-<form id="contact-form">
-<input type="text" name="name" placeholder="Your Name" required>
-<input type="email" name="email" placeholder="Your Email" required>
-<textarea name="message" placeholder="Message"></textarea>
-<button type="submit">Send Message</button>
+<form onsubmit="sendMail(event)">
+<input id="name" placeholder="Your Name" required>
+<input id="email" type="email" placeholder="Your Email" required>
+<textarea id="message" placeholder="Message" required></textarea>
+<button type="submit" class="btn">Send Message</button>
 </form>
-<p id="status"></p>
+<p>contact@practicegridsolutions.com<br>+1 (727) 674-1458</p>
 </section>
-<script src="assets/js/email.js"></script>
-```
+</body>
+</html>
 
----
 
-## assets/js/email.js
-
-```javascript
-const form=document.getElementById('contact-form');
-form.addEventListener('submit',function(e){
-e.preventDefault();
-emailjs.sendForm('YOUR_SERVICE_ID','YOUR_TEMPLATE_ID',this)
-.then(()=>document.getElementById('status').innerText='Message Sent Successfully!')
-.catch(()=>document.getElementById('status').innerText='Failed to send message');
-});
-```
-
----
-
-## assets/css/style.css (Premium UI additions)
-
-```css
-body{margin:0;font-family:Poppins;background:#f6fbff}
-.glass{background:rgba(255,255,255,.15);backdrop-filter:blur(10px)}
-.hero{display:flex;align-items:center;justify-content:space-between;padding:80px;background:linear-gradient(135deg,#0A4D68,#088395);color:#fff}
-.hero-img{width:45%;border-radius:20px;box-shadow:0 20px 40px rgba(0,0,0,.25)}
-.btn{background:#05BFDB;padding:14px 30px;border-radius:30px;color:#fff;text-decoration:none}
-.ehr-slider-section{text-align:center;padding:60px}
-.slider{overflow:hidden;white-space:nowrap}
-.slide-track{display:inline-block;animation:scroll 25s linear infinite}
-.slide-track span{display:inline-block;margin:0 40px;font-weight:600;font-size:20px;color:#0A4D68}
-@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.contact form{max-width:450px;margin:auto;display:flex;flex-direction:column;gap:12px}
-.contact input,.contact textarea{padding:12px;border-radius:8px;border:1px solid #ccc}
-.contact button{background:#0A4D68;color:#fff;padding:12px;border:none;border-radius:8px}
-```
+<!-- ======================= css/styles.css ======================= -->
+<style>
+:root{--primary:#6f3bd2;--secondary:#3c4bb7}
+body{font-family:Poppins;margin:0;background:#f7f8ff}
+.navbar{display:flex;justify-content:space-between;padding:15px 40px;background:white;box-shadow:0 3px 10px rgba(0,0,0,.1)}
+.logo{height:50px}
+nav a{margin:0 15px;text-decoration:none;color:#333;font-weight:600}
+.hero{height:70vh;background:linear-gradient(120deg,var(--primary),var(--secondary));display:flex;align-items:center;justify-content:center;color:white;text-align:center}
+.btn{background:white;color:var(--primary);padding:12px 25px;border-radius:25px;text-decoration:none;font-weight:700}
+.service-grid,.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;padding:40px}
+.card{background:white;padding:25px;border-radius:15px;box-shadow:0 5px 20px rgba(0,0,0,.08);transition:.3s}
+.card:hover{transform:translateY(-8px)}
+.ehr-slider{overflow:hidden;padding:40px;background:white}
+.slider-track{display:flex;animation:scroll 25s linear infinite}
+.slide{min-width:200px;padding:15px;font-weight:700;color:var(--secondary)}
+@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-100%)}}
+.contact form{display:flex;flex-direction:column;gap:12px;max-width:400px;margin:auto}
+input,textarea{padding:12px;border-radius:8px;border:1px solid #ccc}
+footer{text-align:center;padding:20px;background:#111;color:white;margin-top:40px}
+</style>
