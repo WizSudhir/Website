@@ -1,0 +1,45 @@
+<!-- ======================= contact.html ======================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact - PracticeGrid Solutions</title>
+<link rel="stylesheet" href="css/styles.css" />
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+(function(){emailjs.init("PUBLIC_KEY");})();
+function sendMail(e){
+ e.preventDefault();
+ emailjs.send("SERVICE_ID","TEMPLATE_ID",{
+  from_name:document.getElementById('name').value,
+  from_email:document.getElementById('email').value,
+  message:document.getElementById('message').value
+ }).then(()=>alert("Message Sent Successfully"));
+}
+</script>
+</head>
+<body>
+<header class="navbar">
+  <img src="assets/logo.png" class="logo" />
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">Why Us</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="contact">
+<h1>Contact Us</h1>
+<form onsubmit="sendMail(event)">
+<input id="name" placeholder="Your Name" required>
+<input id="email" type="email" placeholder="Your Email" required>
+<textarea id="message" placeholder="Message" required></textarea>
+<button type="submit" class="btn">Send Message</button>
+</form>
+<p>contact@practicegridsolutions.com<br>+1 (727) 674-1458</p>
+</section>
+</body>
+</html>
+
